@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: SiNUX
- * Date: 8/1/2017
- * Time: 9:55 AM
+ * Date: 10/18/2017
+ * Time: 10:16 AM
  */
 
 session_start();
@@ -21,7 +21,7 @@ include_once ("../Functions/userCheck.php");
     <!-- Java Scripts -->
     <script language="JavaScript" type="text/javascript" src="../../jScripts/Libraries/jquery.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../jScripts/Libraries/jquery-ui.min.js"></script>
-    <script language="JavaScript" type="text/javascript" src="../../jScripts/totTimeByUserFunctions.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../../jScripts/totProdTimeFunctions.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../jScripts/getUser.js"></script>
     <script language="JavaScript" type="text/javascript" src="../../jScripts/getIds.js"></script>
     <script language="javascript" type="text/javascript" src="../../jScripts/getCat.js"></script>
@@ -57,29 +57,29 @@ include_once ("../Functions/userCheck.php");
 </head>
 
 <body>
-  <div id="divCenter-timeEdit" class="box">
-       <div class="logo-timeEdit">
-            <img src="../../images/logo.png" width="142" height="33">
-       </div>
-        <div id="mainDiv" style="height: 38px;">
-            <label for="dPicker">Date:</label>
-            <input type="text" id="dPicker" name="dPicker" style="margin-left: .5%;" size="10">
-            <input type="button" class="getData" value="Submit" onclick="getTotal()">
-            <span style="margin-left: 4%;">Export as :</span>
-            <div id="ico-container">
-                <div id="ico">
-                    <a href="#" onclick="excExport()">
-                        <img src="../../images/ico/Excel-2.ico" width="32px" height="32px">
-                    </a>
-                    <a href="#" onclick="pdfExport()">
-                        <img src="../../images/ico/pdf-flat.ico" width="32px" height="32px">
-                    </a>
-                </div>
+<div id="divCenter-timeEdit" class="box">
+    <div class="logo-timeEdit">
+        <img src="../../images/logo.png" width="142" height="33">
+    </div>
+    <div id="mainDiv" style="height: 38px;">
+        <label for="dPicker">Date:</label>
+        <input type="text" id="dPicker" name="dPicker" style="margin-left: .5%;" size="10">
+        <input type="button" class="getData" value="Submit" onclick="getProdTotal()">
+        <span style="margin-left: 4%;">Export as :</span>
+        <div id="ico-container">
+            <div id="ico">
+                <a href="#" onclick="excExport()">
+                    <img src="../../images/ico/Excel-2.ico" width="32px" height="32px">
+                </a>
+                <a href="#" onclick="pdfExport()">
+                    <img src="../../images/ico/pdf-flat.ico" width="32px" height="32px">
+                </a>
             </div>
         </div>
-       <div id="resultTable">
-           <span id="noDataMsg"></span>
-       </div>
-  </div>
+    </div>
+    <div id="resultTable">
+        <span id="noDataMsg"></span>
+    </div>
+</div>
 </body>
 </html>

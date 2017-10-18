@@ -52,7 +52,7 @@ function closBtn() {
 }
 
 //Send time to the table creation page
-function getTotal(){
+function getProdTotal(){
 
     var date = document.getElementById("dPicker").value;
 
@@ -75,7 +75,7 @@ function getTotal(){
             }
         };
 
-        xmlhttp.open("POST","../Report/totTimeByUserTable.php?date="+date,true);
+        xmlhttp.open("POST","../Report/totalProductionTimeTable.php?date="+date,true);
         xmlhttp.send();
     }
 }

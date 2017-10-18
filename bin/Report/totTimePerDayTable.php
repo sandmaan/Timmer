@@ -9,11 +9,12 @@ session_start();
 include_once("../iConnect/handShake.php");
 include_once ("../Functions/userCheck.php");
 
-if (isset($_REQUEST["date"])){
+if (!empty($_REQUEST["date"])){
+
     $getTot = "SELECT userlogin.uName,usrId, SEC_TO_TIME(SUM(TIME_TO_SEC(timeSpent))) AS totTime FROM usertimetrack
-               LEFT JOIN userlogin ON usertimetrack.usrId = userlogin.uId WHERE jDate = :jdate AND utClient != '2' GROUP BY usrId";
+               LEFT JOIN userlogin ON usertimetrack.usrId = userlogin.uId WHERE jDate = :jdate GROUP BY usrId";
     $getTotQuery = $dbConnect -> prepare($getTot);
-    $getTotQuery -> bindParam('jdate', $_REQUEST["date"]);
+    $getTotQuery -> bindParam(':jdate', $_REQUEST["date"]);
     $getTotQuery -> execute();
 
     $getTotCount = $getTotQuery -> rowCount();

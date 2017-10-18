@@ -4,7 +4,7 @@ include_once("../iConnect/handShake.php");
 
 //Get categories from the data base and populate the category drop down
 //This process will check if both cat and utid are set first part will only run if both variables are set
-if(isset($_REQUEST["cat"]) && isset($_REQUEST["utid"])){
+if(!empty($_REQUEST["cat"]) && !empty($_REQUEST["utid"])){
 
 //  This will get populate the editing forms drop down and will set the selected value by default using the if command
 //  When if set the default selection while will keep on running using the while and the top part of the sql
@@ -20,7 +20,7 @@ if(isset($_REQUEST["cat"]) && isset($_REQUEST["utid"])){
 	$getCatEditQuery -> execute();
 	$getCatEditRow = $getCatEditQuery -> fetch(PDO::FETCH_ASSOC);
 
-//  echo "<option></option>";
+//  echo "<option selected >----- Select Category -----</option>";
 	while ($row = $getCatQuery -> fetch(PDO::FETCH_ASSOC)){
 		echo "<option id= ".$row["catId"].' '.(($getCatEditRow["Category"] == $getCatEditRow["catId"])?'selected':"").'>'.$row["Catagory"]."</option>";
 //		I'm using the if operator to set the selected HTML attribute

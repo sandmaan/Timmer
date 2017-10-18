@@ -54,7 +54,7 @@ include_once ("../Functions/userCheck.php");
         <div class="w3-dropdown-hover">
             <button class="w3-button">Reports <i class="fa fa-caret-down"></i></button>
             <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                <a href="../Report/totalTimeByUser.php" target="container" class="w3-bar-item w3-button w3-hover-light-blue">Total Time All Users</a>
+                <a href="../Report/totalTimePerDay.php" target="container" class="w3-bar-item w3-button w3-hover-light-blue">Total Time All Users</a>
             </div>
         </div>
         <div class="w3-dropdown-hover w3-right">
